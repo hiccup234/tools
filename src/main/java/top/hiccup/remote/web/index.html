@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title></title>
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+    <script src="jquery.form.js" type="text/javascript"></script>
+</head>
+
+<body>
+<br/>
+<br/>
+
+<form id="form1" enctype="multipart/form-data" method="post" style="display: inline; margin-left: 20px;">
+    <input id="byteCode" type="file" name="file"/>
+    <a href="javascript:;" id="submit">上传</a>
+
+    <br/>
+    <br/>
+    <textarea style="margin-left: 15px; width:90%;" id="targetText" rows="35" cols="30"></textarea>
+</form>
+
+
+<script>
+    $('#submit').on('click', function () {
+        debugger;
+        var byteCode = $("#byteCode").val();
+        if (byteCode == null || byteCode == '') {
+            alert("请选择要上传的字节码文件");
+            return;
+        } else {
+            $("#form1").ajaxSubmit({
+                url: "/_top/_remote/execute",
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    alert(JSON.stringify(data));
+                    if (data != null && data.responseText) {
+                        $('#targetText').val(data.responseText);
+                    } else {
+                        alert(JSON.stringify(data));
+                    }
+                },
+                error: function (data) {
+                    if (data != null && data.responseText) {
+                        $('#targetText').val(data.responseText);
+                    } else {
+                        alert(JSON.stringify(data));
+                    }
+                }
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
