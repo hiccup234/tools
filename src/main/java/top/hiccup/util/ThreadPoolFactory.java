@@ -51,7 +51,7 @@ public class ThreadPoolFactory {
     }
 
     public static ThreadPoolExecutor getInstance() {
-        // 第一次访问InnerThreadPoolHolder时，才会触发其加载链接和初始化，由JVM保证线程安全（不同ClassLoader下无法保证）
+        // 第一次访问InnerThreadPoolHolder时，才会触发其加载链接和初始化，由JVM保证线程安全（不同ClassLoader下无法保证单例）
         return InnerThreadPoolHolder.INSTANCE;
     }
 
