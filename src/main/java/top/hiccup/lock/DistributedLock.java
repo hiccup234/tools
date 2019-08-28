@@ -75,4 +75,9 @@ public class DistributedLock {
             jedis.del(lockKey);
         }
     }
+
+
+    public static void main(String[] args) {
+        System.out.println("DDD");
+    }
 }
