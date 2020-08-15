@@ -1,7 +1,7 @@
 package top.hiccup.remote.example;
 
 /**
- * 需要编译为源代码的字节码
+ * 需要编译为字节码的源代码
  *
  * @author wenhy
  * @date 2019/5/8

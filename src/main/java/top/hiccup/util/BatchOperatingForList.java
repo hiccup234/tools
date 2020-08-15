@@ -12,7 +12,7 @@ import java.util.Random;
  */
 public class BatchOperatingForList {
 
-	interface Strategy<E> {
+	interface Command<E> {
 		void execute(List<E> list);
 	}
 
@@ -23,7 +23,7 @@ public class BatchOperatingForList {
 	 * @param command
 	 * @param <T>
 	 */
-	public static <T> void batchOperating(List<T> list, int batchSize, Strategy<T> command) {
+	public static <T> void batchOperating(List<T> list, int batchSize, Command<T> command) {
 		if(!(null != list && list.size() > 0)) {
 			return ;
 		}
@@ -53,7 +53,7 @@ public class BatchOperatingForList {
 //			list.add(Long.valueOf(rand.nextInt(1000)));
 			list.add(Long.valueOf(i+1001));
 		}
-		batchOperating(list, 10, new Strategy<Long>() {
+		batchOperating(list, 10, new Command<Long>() {
 			@Override
 			public void execute(List<Long> list) {
 				for(Long l : list) {
