@@ -4,7 +4,7 @@
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
-	<display-name>test</display-name>
+	<display-name>demo</display-name>
 
 	<!-- 指定初始化ServletContext参数：Spring配置文件位置
 		（如果没配置这个ContextLoaderListener默认会加载WEB-INF下的applicationContext.xml） -->

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.ServiceLoader;
 
 /**
- * Main
+ * Main（仿Dubbo容器启动类）
  *
  * @author wenhy
  * @date 2019/9/5
