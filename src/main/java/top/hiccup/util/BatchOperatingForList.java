@@ -17,7 +17,7 @@ public class BatchOperatingForList {
 	}
 
 	/**
-	 * 通过策略模式来实现对整个list做批量操作，不用关心边界问题
+	 * 通过命令模式来实现对整个list做批量操作，不用关心边界问题
 	 * @param list
 	 * @param batchSize
 	 * @param command
